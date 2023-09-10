@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio Frequency Allocation Graph</title>
+
+    <!-- CSS -->
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-center font-bold text-3xl mt-8">
+        Radio Frequency Allocation Graph
+      </h1>
+    </header>
+
+    <main>
+      <!-- INPUT SECTION -->
+      <section class="flex justify-center gap-10 mt-6">
+        <!-- FORM CONTAINER -->
+        <div
+          class="flex flex-col gap-8 bg-slate-300 px-4 py-8 rounded-lg shadow-xl"
+        >
+          <!-- SERVICE NAME -->
+          <div class="grid grid-cols-2 items-center">
+            <span>Service Name:</span>
+            <input class="rounded-md p-1" type="text" name="" id="servName" />
+          </div>
+          <!-- START FREQ -->
+          <div class="grid grid-cols-2 items-center">
+            <span>Starting Frequency:</span>
+            <input
+              class="rounded-md p-1"
+              type="number"
+              name=""
+              id="startFreq"
+            />
+            <div>
+              <select class="rounded-md" id="sfUnit">
+                <option value="Mhz">MHz</option>
+                <option value="Ghz">GHz</option>
+              </select>
+            </div>
+          </div>
+          <!-- END FREQ -->
+          <div class="grid grid-cols-2 items-center">
+            <span class="">Ending Frequency:</span>
+            <input class="rounded-md p-1" type="number" name="" id="endFreq" />
+            <div>
+              <select class="rounded-md" id="efUnit">
+                <option value="Mhz">MHz</option>
+                <option value="Ghz">GHz</option>
+              </select>
+            </div>
+          </div>
+          <!-- COLOR -->
+          <div class="grid grid-cols-2 items-center">
+            <span>Color:</span>
+            <input class="w-full" type="color" name="" id="color" />
+          </div>
+          <!-- ADD SERVICE -->
+          <div class="flex justify-center">
+            <button
+              class="bg-white hover:bg-gray-200 duration-200 py-2 rounded-xl w-[200px]"
+              id="btn-add"
+            >
+              Add Service
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col gap-5 bg-slate-300 py-8 rounded-lg shadow-xl h-36"
+        >
+          <div class="grid grid-cols-2 items-center px-4">
+            <span class="">Service Name:</span>
+            <input class="rounded-md p-1" type="text" name="" id="deleteName" />
+          </div>
+          <div class="flex justify-center">
+            <button
+              class="bg-red-500 hover:bg-red-700 duration-200 py-2 rounded-xl w-[200px]"
+              id="btn-delete"
+            >
+              Delete Service
+            </button>
+          </div>
+          <div
+            class="flex justify-center mt-24 bg-slate-300 py-8 rounded-lg shadow-xl h-48"
+          >
+            <button
+              class="bg-yellow-600 hover:bg-red-700 duration-200 py-2 rounded-xl w-[200px] text-white font-bold"
+              id="btn-clear"
+            >
+              CLEAR ALL
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- GRAPH SECTION -->
+      <section class="mt-6 px-8 flex flex-col items-center">
+        <!-- GRAPH CONTAINER -->
+        <div
+          class="w-[1200px] h-[400px] border-2 flex gap-2 py-4 px-1 relative overflow-x-auto overflow-y-hidden items-start"
+          id="graph"
+        >
+          <!-- THE SERVICES GETS ADDED HERE VIA JS -->
+        </div>
+      </section>
+    </main>
+
+    <script src="logic.js"></script>
+  </body>
+</html>
